@@ -1,0 +1,27 @@
+name: Update CLI formula from signed R2 release
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: update-cli-formula
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install signature verifier
+        run: sudo apt-get update && sudo apt-get install -y minisign
+      - name: Verify release and update formula
+        run: python3 -B scripts/update.py
+      - name: Publish changed formula
+        run: |
+          git diff --exit-code -- Formula/cli.rb && exit 0
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add Formula/cli.rb
+          git commit -m 'Update CLI from signed public release'
+          git push
