@@ -2,27 +2,27 @@
 class Cli < Formula
   desc "Command-line client for the Berth self-hosted PaaS"
   homepage "https://github.com/evumi/homebrew-berth"
-  version "0.1.23"
+  version "0.1.25"
 
   on_macos do
     on_arm do
-      url "https://releases.bunship.site/berth/v0.1.23/berth-darwin-arm64", using: :nounzip
-      sha256 "07c3a431aa5270f646ef298c27826d0241836c15a8eedaa354c45e37a9cec3fe"
+      url "https://releases.bunship.site/berth/v0.1.25/berth-darwin-arm64", using: :nounzip
+      sha256 "74b7e55b66e9cd493c4c7854d25c2a74ff115620b1c850c81bc5557fae462832"
     end
     on_intel do
-      url "https://releases.bunship.site/berth/v0.1.23/berth-darwin-amd64", using: :nounzip
-      sha256 "d496a95fcc7ecfd9f00e304b81cae44d54e02374c52fa072730c4d20decbe33a"
+      url "https://releases.bunship.site/berth/v0.1.25/berth-darwin-amd64", using: :nounzip
+      sha256 "dd53ad6b1db56d0f43e27d0ff94f9f7ba4ceb60de80aaa2d1c96e934df8a2302"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://releases.bunship.site/berth/v0.1.23/berth-linux-arm64", using: :nounzip
-      sha256 "e96c5dda2463780e0ca388be5c65445f5421151d810399d4fd9a20bd629290d1"
+      url "https://releases.bunship.site/berth/v0.1.25/berth-linux-arm64", using: :nounzip
+      sha256 "92e25e410dadec5f29dafe56a78a5ec87a351f6eb693ae58440647d2eb6b6c09"
     end
     on_intel do
-      url "https://releases.bunship.site/berth/v0.1.23/berth-linux-amd64", using: :nounzip
-      sha256 "449711e3505f1fbca9402eb56977bd41d6df6d779fac8c5314407139aee93812"
+      url "https://releases.bunship.site/berth/v0.1.25/berth-linux-amd64", using: :nounzip
+      sha256 "cd733892cbebfd40a912fdce6310ea632d91cfafc92e3b5ffa96e93a701e7b81"
     end
   end
 
